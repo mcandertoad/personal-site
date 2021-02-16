@@ -6,13 +6,13 @@ import styles from "./styles.module.css"
 const pages = [
   {
     title: "About Me",
-    href: "/about",
+    href: "/aboutMe",
     body: "A little bit about me and my life"
   },
   {
-    title: "About the Project",
+    title: "About this Website",
     href: "/aboutProject",
-    body: "About this website"
+    body: "Technologies chosen to build this website"
   },
   {
     title: "Experience",

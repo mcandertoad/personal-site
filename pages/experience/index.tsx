@@ -1,10 +1,10 @@
 import Link from 'next/link'
 
-import Layout from "../components/layout"
-import Navigation from "../components/navigation"
-import Experience from "../components/experience"
+import Layout from "../../components/layout"
+import Navigation from "../../components/navigation"
+import Experience from "../../components/experience"
 
-import { getSortedExperienceData } from "../src/experience"
+import { getSortedExperienceData } from "../../src/experience"
 
 export async function getStaticProps() {
   const allExperienceData = getSortedExperienceData()

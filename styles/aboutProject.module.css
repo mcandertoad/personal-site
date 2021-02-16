@@ -1,0 +1,12 @@
+.aboutList {
+  list-style: circle;
+}
+
+.aboutList li {
+  padding: 5px;
+}
+
+.aboutList li a:hover {
+  font-style: italic;
+  color: #0070f3;
+}
