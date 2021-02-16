@@ -1,0 +1,183 @@
+.experienceList {
+  list-style: none;
+  padding-left: 0px;
+}
+
+.experienceItem {
+  padding: 3em 2em 2em;
+	position: relative;
+	color: #666;
+  border-left: 2px solid #666;
+  cursor: pointer;
+}
+
+.experienceItem::before {
+  content: attr(data-startDate);
+  position: absolute;
+  left: 2em;
+  font-weight: bold;
+  top: 1em;
+  display: block;
+  font-weight: 700;
+  font-size: .785rem;
+}
+
+.experienceItem::after {
+  width: 10px;
+  height: 10px;
+  display: block;
+  top: 1em;
+  position: absolute;
+  left: -7px;
+  border-radius: 10px;
+  content: '';
+  border: 2px solid #666;
+  background: white;
+}
+
+.experienceItem:last-child {
+  border-image: linear-gradient(
+    to bottom,
+    rgba(102, 102, 102 ,1) 60%,
+    rgba(102, 102, 102 ,0)) 1 100%
+  ;
+}
+
+.experienceItem:hover::after,
+.experienceItem:active::after,
+.experienceItem:focus::after {
+  border: 2px solid #0070f3;
+}
+
+.experienceItem:hover,
+.experienceItem:active,
+.experienceItem:focus {
+  border-left: 2px solid #0070f3;
+}
+
+.experienceItem:last-child:hover,
+.experienceItem:last-child:active,
+.experienceItem:last-child:focus {
+  border-image: linear-gradient(
+    to bottom,
+    rgba(0, 112, 243, 1) 60%,
+    rgba(0, 112, 243, 0)) 1 100%
+  ;
+}
+
+.experienceItem:hover h2,
+.experienceItem:active h2,
+.experienceItem:focus h2 {
+  text-decoration: underline;
+  /* color: #0070f3; */
+}
+
+.experienceItem:hover .experienceDescription,
+.experienceItem:active .experienceDescription,
+.experienceItem:focus .experienceDescription {
+  display: inline;
+}
+
+.experienceText {
+  font-size: large;
+}
+
+.experienceDescription {
+  display: none;  
+}
+
+/* Minimum experience below*/
+
+.minExperienceList {
+  list-style: none;
+  padding-left: 0px;
+}
+.minExperienceItem {
+  padding: 1em;
+	position: relative;
+  color: #666;
+  width: 6em;
+  border-left: 2px solid #666;
+  cursor: pointer;
+}
+
+.minExperienceItem::before {
+  content: attr(data-startdate);
+  position: absolute;
+  left: 2em;
+  font-weight: bold;
+  top: 1em;
+  display: block;
+  font-weight: 700;
+  font-size: .785rem;
+}
+
+.minExperienceItem::after {
+  width: 10px;
+  height: 10px;
+  display: block;
+  top: 1em;
+  position: absolute;
+  left: -7px;
+  border-radius: 10px;
+  content: '';
+  border: 2px solid #666;
+  background: white;
+}
+
+.minExperienceItem:last-child {
+  border-image: linear-gradient(
+    to bottom,
+    rgba(102, 102, 102 ,1) 60%,
+    rgba(102, 102, 102 ,0)) 1 100%
+  ;
+}
+
+.minExperienceItem:hover::after,
+.minExperienceItem:active::after,
+.minExperienceItem:focus::after {
+  border: 2px solid #0070f3;
+}
+
+.minExperienceItem:hover,
+.minExperienceItem:active,
+.minExperienceItem:focus {
+  border-left: 2px solid #0070f3;
+}
+
+.minExperienceItem:last-child:hover,
+.minExperienceItem:last-child:active,
+.minExperienceItem:last-child:focus {
+  border-image: linear-gradient(
+    to bottom,
+    rgba(0, 112, 243, 1) 60%,
+    rgba(0, 112, 243, 0)) 1 100%
+  ;
+}
+
+.minExperienceItem:hover .minExperienceText,
+.minExperienceItem:active .minExperienceText,
+.minExperienceItem:focus .minExperienceText {
+  display: block;
+  margin: 20px 0px 0px 22px;
+}
+
+.minExperienceText {
+  display: none;
+}
+
+/* Selected */
+.minExperienceItemSelected {
+  composes: minExperienceItem;
+  color: #0070f3;
+}
+
+.minExperienceItemSelected::after {
+  border: 2px solid #0070f3;
+}
+
+.minExperienceItemSelected:hover .minExperienceText,
+.minExperienceItemSelected:active .minExperienceText,
+.minExperienceItemSelected:focus .minExperienceText {
+  display: none;
+}
