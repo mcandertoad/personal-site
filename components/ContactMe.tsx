@@ -1,9 +1,6 @@
 import { useState } from "react"
 
-import type { ContactMeRequest, ContactMeResponse } from "../../types/contactMe"
-
-import styles from "../../styles/projects/contactMe.module.css"
-import utilStyles from "../../styles/utils.module.css"
+import type { ContactMeRequest, ContactMeResponse } from "../types/contactMe"
 
 const status = {
   initial: "INITIAL",
@@ -21,7 +18,7 @@ const getFormHeader = submitStatus => {
       return (
         <>
           <h2>Oh dang! Something went wrong</h2>
-          <p>This site is quite developmental. If you'd still like to reach out, you can <a className={utilStyles.bodyLink} href="mailto:mccall.andrew@gmail.com">email me directly</a>.</p>
+          <p>This site is quite developmental. If you'd still like to reach out, you can <a href="mailto:mccall.andrew@gmail.com">email me directly</a>.</p>
         </>
       )
   }
@@ -47,46 +44,34 @@ export default function ContactMe({ onSubmit }) {
   }
 
   return (
-    <div
-      className={styles.mainWrapper}
-    >
+    <div>
 
       <form
-        className={styles.formBody}
         onSubmit={(event) => submitForm(event)}
       >
         {getFormHeader(submitStatus)}
         {submitStatus === status.initial && (
           <>
-            <label
-              className={styles.formLabel}
-            >
+            <label>
               Name
                 <input
                 type="text"
                 autoComplete="off"
-                className={styles.formInput}
                 value={name}
                 onChange={(event) => setName(event.target.value)}
               />
             </label>
-            <label
-              className={styles.formLabel}
-            >
+            <label>
               Email
                 <input
                 type="text"
-                className={styles.formInput}
                 value={email}
                 onChange={(event) => setEmail(event.target.value)}
               />
             </label>
-            <label
-              className={styles.formLabel}
-            >
+            <label>
               Message
                 <textarea
-                className={styles.formInput}
                 autoComplete="off"
                 value={message}
                 onChange={(event) => setMessage(event.target.value)}
@@ -95,7 +80,6 @@ export default function ContactMe({ onSubmit }) {
             </label>
             <input
               type="submit"
-              className={styles.formSubmit}
               value="Submit"
             />
           </>

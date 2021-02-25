@@ -1,9 +1,0 @@
-.articleWrapper {
-  display: flex;
-  justify-content: flex-start;
-  flex-wrap: wrap;
-}
-
-.article {
-  max-width: 42rem;
-}

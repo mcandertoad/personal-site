@@ -2,14 +2,11 @@ import Head from "next/head"
 import Image from "next/image"
 import Link from "next/link"
 
-import { myName, siteTitle } from "../../src/constants"
-
-import styles from "./layout.module.css"
-import utilStyles from "../../styles/utils.module.css"
+import { myName, siteTitle } from "../src/constants"
 
 export default function Layout({ children, home = false }) {
   return (
-    <div className={styles.container}>
+    <>
       <Head>
         <link rel="icon" href="/favicon.ico" />
         <meta
@@ -23,13 +20,12 @@ export default function Layout({ children, home = false }) {
         <meta name="og:title" content={siteTitle} />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
-      <header className={styles.header}>
+      <header>
         {home ? (
           <>
             <Image
               priority
               src="/images/profile.jpg"
-              className={utilStyles.borderCircle}
               height={144}
               width={144}
               alt={myName}
@@ -43,31 +39,28 @@ export default function Layout({ children, home = false }) {
                   <Image
                     priority
                     src="/images/profile.jpg"
-                    className={utilStyles.borderCircle}
                     height={108}
                     width={108}
                     alt={myName}
                   />
                 </a>
               </Link>
-              <h2
-                className={styles.headerTitleSmall}
-              >
+              <h2>
                 <Link href="/">
-                  <a className={utilStyles.colorInherit}>{myName}</a>
+                  <a>{myName}</a>
                 </Link>
               </h2>
             </>
           )}
       </header>
-      <main className={styles.main}>{children}</main>
+      <main>{children}</main>
       {!home && (
-        <div className={styles.backToHome}>
+        <div>
           <Link href="/">
             <a>← Back to home</a>
           </Link>
         </div>
       )}
-    </div>
+    </>
   )
 }

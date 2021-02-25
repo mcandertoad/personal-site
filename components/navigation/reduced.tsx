@@ -1,6 +1,5 @@
 import Link from 'next/link'
 
-import styles from "./styles.module.css"
 import Tooltip from "@bit/mui-org.material-ui.tooltip"
 
 const Reduced = ({ title, body, href, selected = false }) => {
@@ -8,12 +7,10 @@ const Reduced = ({ title, body, href, selected = false }) => {
     <Link
       href={href}
     >
-      <div className={selected ? styles.reducedSelected : styles.reduced}>
+      <div>
         <Tooltip
           title={(
-            <div
-              className={styles.tooltipBody}
-            >{body}</div>
+            <div>{body}</div>
           )}
         >
           <span>

@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router'
-import Card from "./card"
+import { Flex } from "@chakra-ui/react"
+import Card from "../Card"
 import Reduced from "./reduced"
-import styles from "./styles.module.css"
 
 const pages = [
   {
@@ -32,16 +32,18 @@ const Navigation = ({ mainPage = false }) => {
     <nav>
       {
         mainPage ? (
-          <div className={styles.grid}>
+          <Flex
+            flexWrap="wrap"
+          >
             {pages.map(page => (
               <Card
                 key={page.href}
                 {...page}
               />
             ))}
-          </div>
+          </Flex>
         ) : (
-            <div className={styles.banner}>
+            <div>
               {pages.map(page => (
                 <Reduced
                   key={page.href}
